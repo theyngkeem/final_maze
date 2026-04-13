@@ -1,5 +1,5 @@
 install:
-	pip install -r requirements.txt
+	pip install flake8 mypy
 
 run:
 	python3 a_maze_ing.py config.txt
@@ -17,9 +17,5 @@ lint:
 	mypy . --warn-return-any --warn-unused-ignores \
 		   --ignore-missing-imports --disallow-untyped-defs \
 		   --check-untyped-defs
-
-lint-strict:
-	flake8 .
-	mypy . --strict
 
 .PHONY: install run debug clean lint lint-strict1

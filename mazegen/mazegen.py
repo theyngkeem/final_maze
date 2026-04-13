@@ -116,7 +116,7 @@ class MazeGenerator:
                     continue
                 self._dfs(row, col, visited)
 
-    def hawtha(self):
+    def hawtha(self) -> None:
         for row in range(self.height):
             self.table[row][0] |= WEST
             self.table[row][self.width - 1] |= EAST
@@ -172,7 +172,7 @@ class MazeGenerator:
             if self.check_pos(row, col + 1):
                 self.table[row][col + 1] |= WEST
 
-    def fix_open_area(self):
+    def fix_open_area(self) -> None:
         """the subject require no 3x3 open area"""
         flag = True
         while flag:

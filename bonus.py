@@ -1,13 +1,14 @@
 import time
 import display_render
+from mazegen import MazeGenerator
 
 CLEAR_SCREEN = "\033[2J\033[H"
 
 
-def animate_path(maze, entry: tuple[int, int], exit_: tuple[int, int],
-                 full_path: list, wall_color: str,
+def animate_path(maze: MazeGenerator, entry: tuple, exit_: tuple[int, int],
+                 full_path: list[tuple[int, int]], wall_color: str,
                  path_color: str, logo_color: str,
-                 delay: float = 0.04,) -> None:
+                 delay: float = 0.04) -> None:
     """Reveal the solution path step by step."""
     for i in range(1, len(full_path) + 1):
         print(CLEAR_SCREEN, end="", flush=True)
